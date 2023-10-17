@@ -1,0 +1,8 @@
+li a.active {
+    color: red;
+    /* border: 1px solid red; */
+  }
+li{
+    margin: 15px;
+    font-weight: 700;
+}
