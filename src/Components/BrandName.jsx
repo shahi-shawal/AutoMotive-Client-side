@@ -20,7 +20,7 @@ const BrandName = () => {
       }}
       className="w-full h-[100vh] mt-10"
     >
-      <div className="hero-overlay bg-black bg-opacity-70">
+      <div className="hero-overlay bg-black bg-opacity-60">
         <div className="py-20 text-center">
           <h1 className="text-white">Check out our recent Brands</h1>
           <h1 className="text-3xl text-white font-bold">FEATURE BRANDS</h1>
@@ -29,7 +29,7 @@ const BrandName = () => {
         </div>
         <div className="max-w-6xl mx-auto grid grid-cols-2 lg:grid-cols-3 gap-5 mb-20">
             {
-                brand.map((brands)=><div className="card  bg-opacity-40 hover:bg-[#DB2D2E] shadow-xl image-full">
+                brand.map((brands)=><div className="card  bg-opacity-60 hover:bg-[#DB2D2E]  shadow-xl image-full">
                 <figure><img src={brands.Brandimg} alt="Shoes" /></figure>
                 <div className="card-body">
                   <h2 className="card-title">{brands.Brandname}</h2>
