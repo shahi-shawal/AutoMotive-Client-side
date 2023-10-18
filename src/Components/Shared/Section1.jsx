@@ -8,7 +8,7 @@ const Section1 = () => {
         <div className="max-w-6xl mx-auto">
             <div className="mt-20 text-center">
                 <h1 className="">Welcome to our website</h1>
-                <h1 className="text-3xl font-bold">CHOICE YOU CAR</h1>
+                <h1 className="text-3xl font-bold">CHOICE YOUR CAR</h1>
               <div className="hover:w-[30%] mx-auto">
               <hr className="bg-red-500 h-[3px] w-[20%] mx-auto mt-4 mb-4"></hr>
                <hr className="bg-red-500 h-[3px] w-[10%] mx-auto"></hr>

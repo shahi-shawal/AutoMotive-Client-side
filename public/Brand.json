@@ -1,0 +1,33 @@
+[
+    {
+      "id": 1,
+      "Brandname": "Mazda",
+      "Brandimg": "https://i.ibb.co/jbz1NZC/brands1.png"
+    },
+    {
+      "id": 2,
+      "Brandname": "BMW",
+      "Brandimg": "https://i.ibb.co/Tcdn06V/brands4.png"
+    },
+    {
+      "id": 3,
+      "Brandname": "Opel",
+      "Brandimg": "https://i.ibb.co/SRjfcZk/brands6.png"
+    },
+    {
+      "id": 4,
+      "Brandname": "Volvo",
+      "Brandimg": "https://i.ibb.co/4s6Y3qK/brands3.png"
+    },
+    {
+      "id": 5,
+      "Brandname": "Volkswagen",
+      "Brandimg": "https://i.ibb.co/dtXGZht/brands2.png"
+    },
+    {
+      "id": 6,
+      "Brandname": "Renault",
+      "Brandimg": "https://i.ibb.co/Wv2df9Q/brands5.png"
+    }
+  ]
+  

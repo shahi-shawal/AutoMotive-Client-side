@@ -4,6 +4,9 @@ import Banner from "./Banner";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import Section1 from "./Shared/Section1";
+import BrandName from "./BrandName";
+import Service from "./Shared/Service";
+import Footer from "./Footer";
 const Home = () => {
   return (
     <div>
@@ -36,6 +39,9 @@ const Home = () => {
      
     </div>
     <Section1></Section1>
+    <BrandName></BrandName>
+    <Service></Service>
+    <Footer></Footer>
     </div>
   );
 };
