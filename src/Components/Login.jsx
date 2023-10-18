@@ -1,6 +1,7 @@
 import Navbar from "./Shared/Navbar";
 import desh from "../../images/desh5.jpg"
 import { Link } from "react-router-dom";
+import Footer from "./Footer";
 
 const Login = () => {
     return (
@@ -56,6 +57,7 @@ const Login = () => {
     </div>
   </div>
 </div>
+<Footer></Footer>
         </div>
     );
 };

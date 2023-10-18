@@ -3,6 +3,7 @@ import MainRoot from "../Root/MainRoot";
 import Home from "../Components/Home";
 import Login from "../Components/Login";
 import Register from "../Components/Register";
+import AddProduct from "../Components/AddProduct";
 
 
 const Router = createBrowserRouter([
@@ -12,6 +13,10 @@ const Router = createBrowserRouter([
         children:[{
             path:"/",
             element:<Home></Home>
+        },
+        {
+            path:"/addproduct",
+            element:<AddProduct></AddProduct>
         },
         {
             path:"/login",

@@ -1,6 +1,7 @@
 import Navbar from "./Shared/Navbar";
 import desh from "../../images/desh6.webp"
 import { Link } from "react-router-dom";
+import Footer from "./Footer";
 
 const Register = () => {
     return (
@@ -17,7 +18,7 @@ const Register = () => {
             <h1 className="py-36 px-20  text-4xl font-bold text-white">REGISTER</h1>
             </div>
             <div className="mt-20 text-center">
-                <h1 className="">REGISTER with your id or social media</h1>
+                <h1 className="">REGISTER with your id </h1>
                 <h1 className="text-3xl font-bold"> REGISTER TO YOUR ACCOUNT</h1>
               <div className="hover:w-[30%] mx-auto">
               <hr className="bg-red-500 h-[3px] w-[20%] mx-auto mt-4 mb-4"></hr>
@@ -62,6 +63,7 @@ const Register = () => {
     </div>
   </div>
 </div>
+<Footer></Footer>
         </div>
         </div>
     );
