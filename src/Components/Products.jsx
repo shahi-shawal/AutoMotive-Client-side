@@ -1,0 +1,106 @@
+import Navbar from "./Shared/Navbar";
+import ad1 from "../../images/ad2.webp"
+import ad2 from "../../images/ad6.avif"
+import ad3 from "../../images/a8.avif"
+import desh from '../../images/ad4.avif'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+
+import './styles.css';    
+import { Navigation } from 'swiper/modules';
+import { useLoaderData, useParams } from "react-router-dom";
+import { useState } from "react";
+import ProductsCard from "./ProductsCard";
+const Products = () => {
+   
+   const loadproducts = useLoaderData()
+   console.log(loadproducts);
+
+    return (
+        <div>
+        <div style={{
+          backgroundImage: `url(${desh})`,
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+        }}
+        className="w-full h-[20vh]">
+          <div className="hero-overlay bg-opacity-60">
+          <Navbar className="bg-gray-300"></Navbar>
+          <h1 className="py-36 px-20  text-4xl font-bold text-white">REGISTER</h1>
+          </div>
+          </div>
+           {/* <Navbar></Navbar> */}
+          <Swiper 
+            navigation={true} modules={[Navigation]} className="mySwiper "
+            
+  >
+
+    <SwiperSlide >
+    <div style={{backgroundImage:`url(${ad2})`,
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+  
+  }}  >
+    <div className=" my-52 ">
+    <h1 className="mb-5 text-white text-5xl font-bold">30% OFF FOR BMW BOOKING</h1>
+    <p className="mb-5 text-2xl text-white">From as low as <span className="text-red-700 font-bold">$20 per day</span>  with limited time offer discount</p>
+    <button className="btn bg-[#DB2D2E] text-white hover:bg-gray-700">Learn More</button>
+    </div>
+    
+  </div>
+    
+
+    </SwiperSlide>
+    
+    <SwiperSlide >
+    <div style={{backgroundImage:`url(${ad3})`,
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+  
+  }}  >
+    <div className=" my-52 ">
+    <h1 className="mb-5 text-white text-5xl font-bold">30% OFF FOR BMW BOOKING</h1>
+    <p className="mb-5 text-2xl text-white">From as low as <span className="text-red-700 font-bold">$20 per day</span>  with limited time offer discount</p>
+    <button className="btn bg-[#DB2D2E] text-white hover:bg-gray-700">Learn More</button>
+    </div>
+    
+  </div>
+    
+
+    </SwiperSlide>
+    
+    <SwiperSlide >
+    <div style={{backgroundImage:`url(${ad1})`,
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+  
+  }}  >
+    <div className=" my-52 ">
+    <h1 className="mb-5 text-white text-5xl font-bold">30% OFF FOR BMW BOOKING</h1>
+    <p className="mb-5 text-2xl text-white">From as low as <span className="text-red-700 font-bold">$20 per day</span>  with limited time offer discount</p>
+    <button className="btn bg-[#DB2D2E] text-white hover:bg-gray-700">Learn More</button>
+    </div>
+    
+  </div>
+    
+
+    </SwiperSlide>
+    
+
+  </Swiper>
+    <div className="max-w-5xl mx-auto gap-5 grid grid-cols-2">
+       {
+          loadproducts.map((product, idx)=>  <ProductsCard key={idx}  product={product}></ProductsCard>)
+         }
+    </div>
+         
+        </div>
+    );
+};
+
+export default Products;

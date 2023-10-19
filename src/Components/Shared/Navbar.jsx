@@ -1,6 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import "./Nav.css";
 import log  from "../../../images/log.png"
+import { Toaster } from "react-hot-toast";
 
 
 
@@ -17,6 +18,7 @@ const Navbar = () => {
     return (
         <div className="max-w-6xl mx-auto">
             <div className="navbar">
+            <Toaster/>
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -39,6 +41,8 @@ const Navbar = () => {
   </div>
   </div>
 </div>
+
+
         </div>
     );
 };

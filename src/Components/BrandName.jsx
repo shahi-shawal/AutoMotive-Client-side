@@ -1,6 +1,8 @@
 import ford from "../../images/ford.jpg";
 import brand1 from "../../images/brands1.jpg"
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+
 
 const BrandName = () => {
     const [brand, setBrand]=useState([])
@@ -29,12 +31,17 @@ const BrandName = () => {
         </div>
         <div className="max-w-6xl mx-auto grid grid-cols-2 lg:grid-cols-3 gap-5 mb-20">
             {
-                brand.map((brands)=><div className="card  bg-opacity-60 hover:bg-[#DB2D2E]  shadow-xl image-full">
+                brand.map((brands)=><Link to={`/brands/${brands.Brandname}`}>
+                <div className="card  bg-opacity-60 hover:bg-[#DB2D2E]  shadow-xl image-full">
                 <figure><img src={brands.Brandimg} alt="Shoes" /></figure>
                 <div className="card-body">
                   <h2 className="card-title">{brands.Brandname}</h2>
+                
                 </div>
-              </div>)
+              </div>
+                
+                </Link>
+                  )
             }
         
         </div>

@@ -4,6 +4,7 @@ import Home from "../Components/Home";
 import Login from "../Components/Login";
 import Register from "../Components/Register";
 import AddProduct from "../Components/AddProduct";
+import Products from "../Components/Products";
 
 
 const Router = createBrowserRouter([
@@ -25,6 +26,11 @@ const Router = createBrowserRouter([
         {
             path:"/register",
             element:<Register></Register>
+        },
+        {
+            path:"/brands/:brandname",
+            element:<Products></Products>,
+            loader:({params})=> fetch(`http://localhost:5001/products/${params.brandname}`)
         }
     ]
     }
