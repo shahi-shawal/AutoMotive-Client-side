@@ -2,8 +2,64 @@ import Navbar from "./Shared/Navbar";
 import desh from "../../images/desh5.jpg"
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
+import { useContext } from "react";
+import { useNavigate,useLocation } from 'react-router-dom';
+import { toast } from "react-hot-toast";         
+import { FcGoogle  } from 'react-icons/fc';
+import { AuthContex } from "./Provider/AuthProvider";
 
 const Login = () => {
+
+
+  const navigate = useNavigate()
+  const location = useLocation()
+const {login, googlelogin}= useContext(AuthContex)
+  const handellogin=e=>{
+      e.preventDefault();
+      const email = e.target.email.value
+      const password = e.target.password.value
+      
+
+      console.log(email,password);
+
+      if (password.length < 6) {
+        return toast.error("Password should be at least 6 characters");
+      } else if (!/[A-Z]/.test(password) || !/[.!@#$%^&*()_+-=]/.test(password)) {
+         return toast.error("Password should contain at least one uppercase letter and one special character");
+      } else if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(email)) {
+        return  toast.error("Please check your email and provide a valid email address");
+      }
+
+
+
+      login(email,password)
+      .then((result)=>{
+          console.log(result.user)
+          navigate(location?.state? location.state : "/")
+          return  toast.success("Log in successfully")
+           
+       
+      })
+      .catch((error)=>{
+       console.error(error)
+      return toast.error("Check your Email and Password")
+      })
+      e.target.reset()
+      
+
+
+  }
+
+ const handelGooglelogin=()=>{
+  googlelogin()
+  navigate(location?.state? location.state : "/")
+  toast.success("Log in successfully")
+   return
+ }
+
+
+
+
     return (
         <div style={{
             backgroundImage: `url(${desh})`,
@@ -27,18 +83,18 @@ const Login = () => {
             <div className=" w-1/2 mx-auto" >
   <div className="flex-col lg:flex-row-reverse">
     <div className="card  w-full ">
-      <form className="card-body">
+      <form onSubmit={handellogin} className="card-body">
         <div className="form-control">
           <label className="label">
             <span className="label-text">Email</span>
           </label>
-          <input type="email" placeholder="email" className="input input-bordered bg-gray-200" required />
+          <input type="email" name="email" placeholder="email" className="input input-bordered bg-gray-200" required />
         </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Password</span>
           </label>
-          <input type="password" placeholder="password" className="input input-bordered bg-gray-200" required />
+          <input type="password" name="password" placeholder="password" className="input input-bordered bg-gray-200" required />
           <label className="label">
             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
           </label>
@@ -50,7 +106,7 @@ const Login = () => {
         <div>
             <h1 className="text-xl font-bold text-center">Login with Social Media </h1>
             <div className="text-center mt-2">
-            <button className="btn border rounded-lg bg-black hover:bg-[#DB2D2E] text-white">GOOGLE LOGIN</button>
+            <button onClick={handelGooglelogin} className="btn border rounded-lg bg-black hover:bg-[#DB2D2E] text-white"><FcGoogle className="text-2xl" />GOOGLE LOGIN</button>
             </div>
         </div>
       </form>
