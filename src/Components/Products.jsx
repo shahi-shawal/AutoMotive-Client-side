@@ -16,7 +16,7 @@ const Products = () => {
    
    const loadproducts = useLoaderData()
    console.log(loadproducts);
-
+   const brandname = useParams()
     return (
         <div>
         <div style={{
@@ -93,6 +93,11 @@ const Products = () => {
     
 
   </Swiper>
+  <h1 className="text-2xl font-bold text-center mt-4">Welcome our Exclusive Brands</h1>
+          <div className="hover:w-[30%] mx-auto mb-10">
+              <hr className="bg-red-500 h-[3px] w-[20%] mx-auto mt-4 mb-4"></hr>
+               <hr className="bg-red-500 h-[3px] w-[10%] mx-auto"></hr>
+              </div>
     <div className="max-w-5xl mx-auto gap-5 grid grid-cols-2">
        {
           loadproducts.map((product, idx)=>  <ProductsCard key={idx}  product={product}></ProductsCard>)
