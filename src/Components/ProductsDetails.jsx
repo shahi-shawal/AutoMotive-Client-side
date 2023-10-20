@@ -1,16 +1,46 @@
 
 import { useLoaderData } from "react-router-dom";
 // import SingleDetails from "./SingleDetails";
+import { toast } from "react-hot-toast";
 import Navbar from "./Shared/Navbar";
 import desh from "../../images/desh9.jpg"
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
+import { AuthContex } from "./Provider/AuthProvider";
+import { useContext } from "react";
+
 const ProductsDetails = () => {
 
-    
+    const {user}= useContext(AuthContex)
     const detailspro = useLoaderData()
     const {name, brandname, image, price, shortdes,rating,type}=detailspro
-   
+    const usermail= user.email
+    console.log(usermail);
+    const handelCart=()=>{
+       
+        
+    
+        const myproducts={name,usermail, brandname, image, price}
+    
+       fetch('http://localhost:5001/cart',{
+        method:"POST",
+        headers:{
+          "content-type":"application/json"
+        },
+        body:JSON.stringify(myproducts)
+       })
+       .then(res=> res.json())
+       .then(data=>{
+        console.log(data);
+        if (data.insertedId) {
+          toast.success('Successfully Add to Cart')
+        }
+       })
+    
+
+
+
+    }
     return (
         <div >
         <div style={{
@@ -40,7 +70,7 @@ const ProductsDetails = () => {
        <div className="">
        <p className="text-xl font-bold">Brand: <span className="text-red-700">{brandname}</span> </p>
        <p className="text-xl">Type:{type}</p>
-       <button className="btn bg-[#DB2D2E] mt-5 text-white hover:bg-gray-700">Add to Cart</button>
+       <button onClick={handelCart} className="btn bg-[#DB2D2E] mt-5 text-white hover:bg-gray-700">Add to Cart</button>
        </div>
        </div>
     </div>

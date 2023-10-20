@@ -7,12 +7,16 @@ import AddProduct from "../Components/AddProduct";
 import Products from "../Components/Products";
 import ProductsDetails from "../Components/ProductsDetails";
 import Update from "../Components/Update";
+import PrivateRouter from "./PrivateRouter";
+import Error from "../Components/Error";
+import Cart from "../Components/Cart";
 
 
 const Router = createBrowserRouter([
     {
         path:"/",
         element:<MainRoot></MainRoot>,
+        errorElement:<Error></Error>,
         children:[{
             path:"/",
             element:<Home></Home>
@@ -36,15 +40,20 @@ const Router = createBrowserRouter([
         },
         {
             path:"/products-details/:id",
-            element:<ProductsDetails></ProductsDetails>,
+            element:<PrivateRouter><ProductsDetails></ProductsDetails></PrivateRouter>,
             loader:({params})=> fetch(`http://localhost:5001/products/1/${params.id}`)
 
         },
         {
             path:"/products-update/:id",
-            element:<Update></Update>,
+            element:<PrivateRouter><Update></Update></PrivateRouter>,
             loader:({params})=> fetch(`http://localhost:5001/products/1/${params.id}`)
 
+        },
+        {
+            path:"/cart",
+            element:<Cart></Cart>,
+            loader:()=> fetch(`http://localhost:5001/cart`)
         }
     ]
     }
