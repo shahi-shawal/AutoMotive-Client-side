@@ -74,13 +74,13 @@ const {login, googlelogin}= useContext(AuthContex)
             </div>
             <div className="mt-20 text-center">
                 <h1 className="">Log in with your id or social media</h1>
-                <h1 className="text-3xl font-bold"> LOGIN TO YOUR ACCOUNT</h1>
+                <h1 className="text-xl lg:text-3xl font-bold"> LOGIN TO YOUR ACCOUNT</h1>
               <div className="hover:w-[30%] mx-auto">
               <hr className="bg-red-500 h-[3px] w-[20%] mx-auto mt-4 mb-4"></hr>
                <hr className="bg-red-500 h-[3px] w-[10%] mx-auto"></hr>
               </div>
             </div>
-            <div className=" w-1/2 mx-auto" >
+            <div className=" lg:w-1/2 mx-auto" >
   <div className="flex-col lg:flex-row-reverse">
     <div className="card  w-full ">
       <form onSubmit={handellogin} className="card-body">

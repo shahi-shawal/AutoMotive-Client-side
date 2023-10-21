@@ -13,7 +13,7 @@ const ProductsDetails = () => {
 
     const {user}= useContext(AuthContex)
     const detailspro = useLoaderData()
-    const {name, brandname, image, price, shortdes,rating,type}=detailspro
+    const {_id,name, brandname, image, price, shortdes,rating,type}=detailspro
     const usermail= user.email
     console.log(usermail);
     const handelCart=()=>{
@@ -22,7 +22,7 @@ const ProductsDetails = () => {
     
         const myproducts={name,usermail, brandname, image, price}
     
-       fetch('http://localhost:5001/cart',{
+       fetch('https://automotive-serverside-as10-pplrupq5u-shawals-projects.vercel.app/cart',{
         method:"POST",
         headers:{
           "content-type":"application/json"

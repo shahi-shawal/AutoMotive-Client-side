@@ -2,7 +2,7 @@ import footlg from "../../images/log.png"
 
 const Footer = () => {
   return (
-    <footer className="footer p-10 bg-neutral text-neutral-content">
+    <footer className="footer  p-10 bg-neutral text-neutral-content">
   <aside>
     <img className="w-28 h-28" src={footlg} alt="" />
   </aside> 

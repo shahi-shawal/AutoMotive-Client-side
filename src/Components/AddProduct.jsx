@@ -21,7 +21,7 @@ const AddProduct = () => {
     console.log(name,image,brandname,rating,shortdes,price,type);
     const myproducts={name,image,brandname,rating,shortdes,price,type}
 
-   fetch('http://localhost:5001/products',{
+   fetch('https://automotive-serverside-as10-pplrupq5u-shawals-projects.vercel.app/products',{
     method:"POST",
     headers:{
       "content-type":"application/json"
@@ -64,7 +64,7 @@ const AddProduct = () => {
                <hr className="bg-red-500 h-[3px] w-[10%] mx-auto"></hr>
               </div>
             </div>
-            <div className=" w-1/2 mx-auto" >
+            <div className="w-full lg:w-1/2 mx-auto" >
   <div className="flex-col lg:flex-row-reverse">
     <div className="card  w-full ">
       <form onSubmit={handelSubmit} className="card-body">

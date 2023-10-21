@@ -36,24 +36,24 @@ const Router = createBrowserRouter([
         {
             path:"/brands/:brandname",
             element:<Products></Products>,
-            loader:({params})=> fetch(`http://localhost:5001/products/${params.brandname}`)
+            loader:({params})=> fetch(` https://automotive-serverside-as10-pplrupq5u-shawals-projects.vercel.app/products/${params.brandname}`)
         },
         {
             path:"/products-details/:id",
             element:<PrivateRouter><ProductsDetails></ProductsDetails></PrivateRouter>,
-            loader:({params})=> fetch(`http://localhost:5001/products/1/${params.id}`)
+            loader:({params})=> fetch(` https://automotive-serverside-as10-pplrupq5u-shawals-projects.vercel.app/products/1/${params.id}`)
 
         },
         {
             path:"/products-update/:id",
             element:<PrivateRouter><Update></Update></PrivateRouter>,
-            loader:({params})=> fetch(`http://localhost:5001/products/1/${params.id}`)
+            loader:({params})=> fetch(` https://automotive-serverside-as10-pplrupq5u-shawals-projects.vercel.app/products/1/${params.id}`)
 
         },
         {
             path:"/cart",
-            element:<Cart></Cart>,
-            loader:()=> fetch(`http://localhost:5001/cart`)
+            element:<PrivateRouter><Cart></Cart></PrivateRouter>,
+            loader:()=> fetch(`https://automotive-serverside-as10-pplrupq5u-shawals-projects.vercel.app/cart`)
         }
     ]
     }

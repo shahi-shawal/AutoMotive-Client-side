@@ -23,7 +23,7 @@ const Update = () => {
         console.log(name,image,brandname,rating,price,type);
         const myproducts={name,image,brandname,rating,price,type}
     
-       fetch(`http://localhost:5001/products/1/${_id}`,{
+       fetch(`https://automotive-serverside-as10-pplrupq5u-shawals-projects.vercel.app/products/1/${_id}`,{
         method:"PATCH",
         headers:{
           "Content-type":"application/json"

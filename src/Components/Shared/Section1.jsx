@@ -16,7 +16,7 @@ const Section1 = () => {
                 <p className="mt-4">The premier online destination for all things automotive!
                  Our car show website is your one-stop hub for enthusiasts, car buyers,<br></br> and anyone passionate about the world of automobiles.</p>
             </div>
-            <div className="grid grid-cols-4 mt-10">
+            <div className="grid grid-cols-1 lg:grid-cols-4 mt-10">
                 <div className="flex flex-col justify-center items-center">
                     <img className="border rounded-full bg-gray-300 hover:bg-red-600 p-6 h-32" src={icon2} alt="" srcset="" />
                     <h1 className="mt-4 font-bold">ALL BRANDS</h1>

@@ -20,16 +20,16 @@ const BrandName = () => {
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
       }}
-      className="w-full h-[100vh] mt-10"
+      className="w-full lg:h-[100vh] lg:mt-10"
     >
       <div className="hero-overlay bg-black bg-opacity-60">
-        <div className="py-20 text-center">
+        <div className="py-10 lg:py-20 text-center">
           <h1 className="text-white">Check out our recent Brands</h1>
           <h1 className="text-3xl text-white font-bold">FEATURE BRANDS</h1>
           <hr className="bg-red-500 h-[1px] w-[20%] mx-auto mt-4 mb-4"></hr>
                <hr className="bg-red-500 h-[1px] w-[10%] mx-auto"></hr>
         </div>
-        <div className="max-w-6xl mx-auto grid grid-cols-2 lg:grid-cols-3 gap-5 mb-20">
+        <div className="max-w-6xl mx-auto grid grid-cols-2 lg:grid-cols-3 gap-5 mb-20 ">
             {
                 brand.map((brands)=><Link to={`/brands/${brands.Brandname}`}>
                 <div className="card  bg-opacity-60 hover:bg-[#DB2D2E]  shadow-xl image-full">

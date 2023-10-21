@@ -20,7 +20,7 @@ const Cart = () => {
     const handelcartDelete=(_id)=>{
        console.log(_id);
 
-       fetch(`http://localhost:5001/cart/${_id}`, {
+       fetch(`https://automotive-serverside-as10-pplrupq5u-shawals-projects.vercel.app/cart/${_id}`, {
         method:"DELETE"
        })
        .then(res=> res.json())

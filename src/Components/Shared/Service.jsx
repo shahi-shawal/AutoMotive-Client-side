@@ -15,7 +15,7 @@ const Service = () => {
                <hr className="bg-red-500 h-[3px] w-[10%] mx-auto"></hr>
               </div>
             </div>
-            <div className="grid grid-cols-2 lg:grid-cols-3  mt-10">
+            <div className="grid grid-cols-1 lg:grid-cols-3  mt-10">
                 <div className="flex flex-col justify-center items-center">
                     <img className="border rounded-full bg-gray-300 hover:bg-red-600 p-6 h-32" src={ser1} alt="" />
                     <h1 className="mt-4 font-bold text-red-600">Drivers</h1>
