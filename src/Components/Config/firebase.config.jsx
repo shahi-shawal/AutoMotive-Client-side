@@ -5,14 +5,16 @@ import { getAuth } from "firebase/auth";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+
 const firebaseConfig = {
-  apiKey: "AIzaSyB5itM6iD1ot2KcQaTHqKm_uJYCQPLEsF4",
-  authDomain: "carshow-as10.firebaseapp.com",
-  projectId: "carshow-as10",
-  storageBucket: "carshow-as10.appspot.com",
-  messagingSenderId: "973273761327",
-  appId: "1:973273761327:web:86940843143d190041a8da"
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROKECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID
 };
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);

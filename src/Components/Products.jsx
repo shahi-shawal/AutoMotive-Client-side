@@ -47,7 +47,7 @@ const Products = () => {
     <div className="my-10 lg:my-52 ">
     <h1 className="mb-5 text-white text-2xl lg:text-5xl font-bold">30% OFF FOR BMW BOOKING</h1>
     <p className="mb-5 text-xl lg:text-2xl text-white">From as low as <span className="text-red-700 font-bold">$20 per day</span>  with limited time offer discount</p>
-    <button className="btn btn-xs lg:btn-xl bg-[#DB2D2E] text-white hover:bg-gray-700">Learn More</button>
+    <button className="btn btn-xs lg:btn-lg bg-[#DB2D2E] text-white hover:bg-gray-700">Learn More</button>
     </div>
     
   </div>
@@ -65,7 +65,7 @@ const Products = () => {
     <div className="my-10 lg:my-52 ">
     <h1 className="mb-5 text-white text-2xl lg:text-5xl font-bold">30% OFF FOR BMW BOOKING</h1>
     <p className="mb-5 text-xl lg:text-2xl text-white">From as low as <span className="text-red-700 font-bold">$20 per day</span>  with limited time offer discount</p>
-    <button className="btn btn-xs lg:btn-xl bg-[#DB2D2E] text-white hover:bg-gray-700">Learn More</button>
+    <button className="btn btn-xs lg:btn-lg bg-[#DB2D2E] text-white hover:bg-gray-700">Learn More</button>
     </div>
     
   </div>
@@ -83,7 +83,7 @@ const Products = () => {
     <div className="my-10 lg:my-52 ">
     <h1 className="mb-5 text-white text-2xl lg:text-5xl font-bold">30% OFF FOR BMW BOOKING</h1>
     <p className="mb-5 text-xl lg:text-2xl text-white">From as low as <span className="text-red-700 font-bold">$20 per day</span>  with limited time offer discount</p>
-    <button className="btn btn-xs lg:btn-xl bg-[#DB2D2E] text-white hover:bg-gray-700">Learn More</button>
+    <button className="btn btn-xs lg:btn-lg bg-[#DB2D2E] text-white hover:bg-gray-700">Learn More</button>
     </div>
     
   </div>
@@ -100,7 +100,7 @@ const Products = () => {
               </div>
     <div className="max-w-5xl mx-auto lg:gap-5 grid grid-cols-1 lg:grid-cols-2">
        {
-          loadproducts.map((product, idx)=>  <ProductsCard key={idx}  product={product}></ProductsCard>)
+        loadproducts.length > 1?  loadproducts.map((product, idx)=>  <ProductsCard key={idx} Brandname={brandname}  product={product}></ProductsCard>) : <h1 className="text-red-700 text-2xl mb-10 font-bold mx-auto">No product Available</h1>
          }
     </div>
          

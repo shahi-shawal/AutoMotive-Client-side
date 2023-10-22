@@ -1,11 +1,17 @@
 import { Link } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 const ProductsCard = ({product}) => {
     const {_id,name, brandname,type, image, price, rating} = product 
-   
+    useEffect(() => {
+      AOS.init();
+      AOS.refresh();
+    }, []);
     return (
         <div >
        
-         <div className="card  card-compact mx-auto mt-5 w-1/2 lg:w-80 bg-gray-100 shadow-xl">
+         <div  data-aos="fade-right"  className="card  card-compact mx-auto mt-5 w-1/2 lg:w-80 bg-gray-100 shadow-xl">
             <figure ><img src={image} alt="Shoes" className=""/></figure>
             <div className="card-body">
               <div className="text-center">

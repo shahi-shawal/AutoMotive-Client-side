@@ -1,9 +1,8 @@
-import React, { useContext, useState } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 import Navbar from "./Shared/Navbar";
 import desh from "../../images/cart2.jpg"
 import { AiOutlineDelete } from "react-icons/ai";
 import Footer from "./Footer";
-
 import { useLoaderData } from 'react-router-dom';
 import { AuthContex } from './Provider/AuthProvider';
 import { toast } from 'react-hot-toast';
@@ -16,7 +15,8 @@ const Cart = () => {
 
     const cartInfo = cartItem.filter((car)=> car.usermail === user.email)
     console.log(cartInfo);
-
+    // const cartLength = 
+    // console.log(cartLength);
     const handelcartDelete=(_id)=>{
        console.log(_id);
 
@@ -35,8 +35,10 @@ const Cart = () => {
         setCartitem(remainging)
        })
     }
+
     return (
         <div>
+       
              <div style={{
             backgroundImage: `url(${desh})`,
             backgroundPosition: "center",
@@ -45,7 +47,7 @@ const Cart = () => {
           }}
           className="w-full h-[50vh]">
             <div className="hero-overlay bg-opacity-60">
-            <Navbar cartInfo={cartInfo} className="bg-gray-300"></Navbar>
+            <Navbar cartLength={cartInfo.length} className="bg-gray-300"></Navbar>
             <h1 className="py-36 px-20  text-4xl font-bold text-white">My Cart</h1>
             </div>
             </div>

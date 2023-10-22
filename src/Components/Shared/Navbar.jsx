@@ -1,14 +1,17 @@
 import { Link, NavLink } from "react-router-dom";
 import "./Nav.css";
 import log  from "../../../images/log.png"
+import sun from "../../../images/sun.png"
+import moon from "../../../images/moon.png"
 import { Toaster } from "react-hot-toast";
 import { AuthContex } from "../Provider/AuthProvider";
 import { useContext } from "react";
 import { useState, useEffect } from "react";
 
 
-const Navbar = () => {
 
+const Navbar = ({cartLength}) => {
+  
   const {user, logout}= useContext(AuthContex)
   const handelsignOut=()=>{
      logout()
@@ -29,7 +32,7 @@ const Navbar = () => {
     );
   
     // update state on toggle
-    const handleToggle = (e) => {
+    const handlemode = (e) => {
       if (e.target.checked) {
         setTheme("dark");
       } else {
@@ -37,11 +40,10 @@ const Navbar = () => {
       }
     };
   
-    // set theme state in localstorage on mount & also update localstorage on state change
+    
     useEffect(() => {
       localStorage.setItem("theme", theme);
       const localTheme = localStorage.getItem("theme");
-      // add custom data-theme attribute to html tag required to update theme using DaisyUI
       document.querySelector("html").setAttribute("data-theme", localTheme);
     }, [theme]);
     return (
@@ -70,12 +72,14 @@ const Navbar = () => {
       <label tabIndex={0} className="btn mr-2 btn-white btn-circle">
         <div className="indicator">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
-          <span className="badge badge-error indicator-item font-bold"></span>
+         {
+          cartLength > 0 &&  <span className="badge badge-error indicator-item font-bold">{cartLength}</span>
+         }
         </div>
       </label>
       <div tabIndex={0} className="mt-3 z-[1] card card-compact dropdown-content w-52 bg-base-100 shadow">
         <div className="card-body">
-          <span className="font-bold text-lg">items</span>
+          <span className="font-bold text-lg">{cartLength}items</span>
           <span className="text-red-600">Subtotal: $999</span>
           <div className="card-actions">
            <Link to="/cart"> <button className="btn bg-[#DB2D2E] text-white hover:bg-gray-700 btn-block">View cart</button></Link>
@@ -83,6 +87,20 @@ const Navbar = () => {
         </div>
       </div>
   </div>
+  <div className="flex-none">
+        {/* Toggle button here */}
+        <button className="btn btn-square btn-ghost">
+          <label className="swap swap-rotate w-12 h-12">
+            <input
+              type="checkbox"
+              onChange={handlemode}
+              checked={theme !== "light"}
+            />
+            <img src={sun} alt="light" className="w-8 h-8 swap-on" />
+            <img src={moon} alt="dark" className="w-8 h-8 swap-off" />
+          </label>
+        </button>
+      </div>
   <div className="">
     {
       user? <>
@@ -114,23 +132,7 @@ const Navbar = () => {
     }
     
   </div>
-  <div className="flex-none">
-        {/* Toggle button here */}
-        <button className="btn btn-square btn-ghost">
-          <label className="swap swap-rotate w-12 h-12">
-            <input
-              type="checkbox"
-              onChange={handleToggle}
-              // show toggle image based on localstorage theme
-              checked={theme === "light" ? false : true}
-            />
-            {/* light theme sun image */}
-            <img src={log} alt="light" className="w-8 h-8 swap-on" />
-            {/* dark theme moon image */}
-            <img src={log} alt="dark" className="w-8 h-8 swap-off" />
-          </label>
-        </button>
-      </div>
+  
   </div>
 </div>
 

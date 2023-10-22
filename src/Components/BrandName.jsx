@@ -2,7 +2,8 @@ import ford from "../../images/ford.jpg";
 import brand1 from "../../images/brands1.jpg"
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const BrandName = () => {
     const [brand, setBrand]=useState([])
@@ -12,6 +13,10 @@ const BrandName = () => {
         .then(res=> res.json())
         .then(data=> setBrand(data))
     },[])
+    useEffect(() => {
+      AOS.init();
+      AOS.refresh();
+    }, []);
   return (
     <div
       style={{
@@ -32,7 +37,7 @@ const BrandName = () => {
         <div className="max-w-6xl mx-auto grid grid-cols-2 lg:grid-cols-3 gap-5 mb-20 ">
             {
                 brand.map((brands)=><Link to={`/brands/${brands.Brandname}`}>
-                <div className="card  bg-opacity-60 hover:bg-[#DB2D2E]  shadow-xl image-full">
+                <div data-aos="fade-right" className="card  bg-opacity-60 hover:bg-[#DB2D2E]  shadow-xl image-full">
                 <figure><img src={brands.Brandimg} alt="Shoes" /></figure>
                 <div className="card-body">
                   <h2 className="card-title">{brands.Brandname}</h2>

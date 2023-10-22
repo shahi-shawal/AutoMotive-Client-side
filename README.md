@@ -1,8 +1,17 @@
-# React + Vite
+Live link : https://carshow-as10.web.app/
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# features and functionalities
+   **Add product on user side when user login
+   **User Update product 
+   ** user Add product on Cart
+   ** User see Product details 
+   ** Adding Drak Mode 
+   ** After add to cart user see how many product on Car
+   **Adding  manual login feature 
+    **adding google login 
+    **adding private route functionality 
+    **user password always protected 
+    **user have see their profile picture and name
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
